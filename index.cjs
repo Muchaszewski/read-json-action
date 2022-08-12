@@ -9,7 +9,7 @@ const action = require('./action');
         const jsonData = core.getInput('json');
         const transformNested = core.getInput('transformNested');
 
-        let keyValueArray = action.execute(path, properties, jsonData, transformNested);
+        let keyValueArray = await action.execute(path, properties, jsonData, transformNested);
         for (const i of keyValueArray) {
             const keyValue = keyValueArray[i];
             core.setOutput(keyValue.key, keyValue.value);
