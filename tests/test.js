@@ -25,6 +25,12 @@ test('get array as input with nested properties', async () => {
     expect(result).toEqual([{key: 'name', value: 'value'}, {key: 'version', value: '1.0.0'}, {key: 'repository_name', value: 'test'}]);
 });
 
+test('get array as input with nested properties with space between itesm', async () => {
+    var result = await action.execute(null, '[name, version, repository.name]', '{"name": "value", "version": "1.0.0", "repository": {"name" : "test"} }', '_');
+    expect(result).toEqual([{key: 'name', value: 'value'}, {key: 'version', value: '1.0.0'}, {key: 'repository_name', value: 'test'}]);
+});
+
+
 test('get input from file', async () => {
     var result = await action.execute('./tests/test.json', 'name', null, '_');
     expect(result).toEqual([{key: 'name', value: 'value'}]);

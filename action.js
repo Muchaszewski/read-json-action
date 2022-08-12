@@ -37,7 +37,8 @@ async function execute(path, properties, jsonData, transformNested) {
 function getProperty(json, properties) {
     let toReturn = [];
     for (const part of properties) {
-        toReturn.push({key: part, value: getNestedValue(json, part)})
+        const trimmed = part.trim();
+        toReturn.push({key: trimmed, value: getNestedValue(json, trimmed)})
     }
     return toReturn;
 }
