@@ -2,7 +2,7 @@
   "name": "read-json-action",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.cjs",
   "type": "module",
   "scripts": {
     "test": "jest"
