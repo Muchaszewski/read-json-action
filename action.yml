@@ -21,4 +21,4 @@ outputs:
     description: "Each property is accessed via it's property name using outputs value eg: {{steps.read_property.outputs.name}}. If a property is nested `.` is replaced with '_' by default eg: {{steps.read_property.repository_url}}"
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'index.cjs'
