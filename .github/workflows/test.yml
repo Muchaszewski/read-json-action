@@ -1,0 +1,22 @@
+
+name: Zip Release
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Read Json Properties Action
+        uses: Muchaszewski/read-json-action@main
+        with:
+          path: "./package.json"
+          properties: "name, version"
