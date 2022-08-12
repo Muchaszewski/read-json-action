@@ -17,6 +17,19 @@ jobs:
       
       - name: Read Json Properties Action
         uses: Muchaszewski/read-json-action@main
+        id: json
         with:
-          path: "./package.json"
+          path: "./tests/test.json"
           properties: "name, version"
+
+      - uses: nick-fields/assert-action@v1
+        with:
+          expected: value
+          actual: ${{ steps.json.outputs.name }}
+          comparison: exact
+
+      - uses: nick-fields/assert-action@v1
+        with:
+          expected: 1.0.0
+          actual: ${{ steps.json.outputs.version }}
+          comparison: exact
