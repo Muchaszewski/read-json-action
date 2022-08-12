@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "",
   "main": "index.cjs",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "jest"
   },
