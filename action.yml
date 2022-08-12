@@ -9,7 +9,7 @@ inputs:
     description: 'Path to the json file'
   json:
     default: "{}"
-    description: 'json input'
+    description: 'Json raw input as text'
   properties:
     description: 'Property or an array to read eg: "[name, version, repository.url]" or "name"'
     required: true
