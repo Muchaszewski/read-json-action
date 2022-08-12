@@ -5,6 +5,14 @@ test('get single property from json provided as a text', async () => {
     expect(result).toEqual([{key: 'name', value: 'value'}]);
 });
 
+test('iterate over result', async () => {
+    var result = await action.execute(null, 'name', '{"name": "value"}', '_');
+    for (const i in result) {
+        expect(result[i].key).toEqual('name');
+        expect(result[i].value).toEqual('value');
+    }
+});
+
 test('get multiple properties from json provided as a text', async () => {
     var result = await action.execute(null, 'name,version', '{"name": "value", "version": "1.0.0"}', '_');
     expect(result).toEqual([{key: 'name', value: 'value'}, {key: 'version', value: '1.0.0'}]);
