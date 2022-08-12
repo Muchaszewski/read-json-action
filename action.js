@@ -15,6 +15,9 @@ async function execute(path, properties, jsonData, transformNested) {
         json = JSON.parse(jsonData);
     }
 
+    console.log(`json = ${JSON.stringify(json)}`);
+
+
     // Split porperty array into each property eg: [name, version, repository.url]
     let keyValueArray = []
     if(properties.startsWith('[')) {
