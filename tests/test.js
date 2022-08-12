@@ -8,8 +8,9 @@ test('get single property from json provided as a text', async () => {
 test('iterate over result', async () => {
     var result = await action.execute(null, 'name', '{"name": "value"}', '_');
     for (const i in result) {
-        expect(result[i].key).toEqual('name');
-        expect(result[i].value).toEqual('value');
+        const keyValue = result[i];
+        expect(keyValue.key).toEqual('name');
+        expect(keyValue.value).toEqual('value');
     }
 });
 
