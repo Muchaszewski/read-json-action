@@ -24,12 +24,12 @@ jobs:
 
       - uses: nick-fields/assert-action@v1
         with:
-          expected: value
-          actual: ${{ steps.json.outputs.name }}
+          expected: "value"
+          actual: "${{steps.json.outputs.name}}"
           comparison: exact
 
       - uses: nick-fields/assert-action@v1
         with:
-          expected: 1.0.0
-          actual: ${{ steps.json.outputs.version }}
+          expected: "1.0.0"
+          actual: "${{steps.json.outputs.version}}"
           comparison: exact
