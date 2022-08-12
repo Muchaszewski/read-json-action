@@ -12,7 +12,9 @@ const action = require('./action');
         let keyValueArray = await action.execute(path, properties, jsonData, transformNested);
         for (const i of keyValueArray) {
             const keyValue = keyValueArray[i];
-            core.setOutput(keyValue.key, keyValue.value);
+            if(keyValue != null) {
+                core.setOutput(keyValue.key, keyValue.value);
+            }
         }
 
     } catch (error) {
